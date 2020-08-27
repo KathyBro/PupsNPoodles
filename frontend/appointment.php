@@ -1,9 +1,10 @@
 <?php
 $title = "Create an Appointment";
+include_once "..\backend\Helper.php";
 include_once "MyHeader.php";
 ?>
 
-<form method=\"post\" action=\"/frontend/appointment.php\"> <label class="appt" for="date">Time (date and time):</label>
+<form method=\"post\"> <label class="appt" for="date">Time (date and time):</label>
     <input type="datetime-local" id="date" name="date">
     <br />
     <label class="appt" for="location">Pick a Location:</label>
@@ -22,13 +23,28 @@ include_once "MyHeader.php";
     <label class="appt" for="petSpecies">Pet Species:</label>
     <input type="text" class="appt" id="petSpecies" name="petSpecies">
     <br />
-
-    <label class="appt" for="reason">Reason for Appointment:</label>
-    <input class="appt" type="text" id="reason" name="reason">
-    <br />
-    <input class="appt" type="submit">
+    <input class="appt" value="Submit" type="submit">
 </form>
 
+<?php
+    if(isset($_GET['date'])){
+    $appointmentTime = $_GET['date'];
+    $petName = $_GET['petName'];
+    $petSpecies = $_GET['petSpecies'];
+    $businessId = $_GET['location'];
+    $ownerId = 1231231;
+    $status = 'isSent';
+
+    echo 'kill yourslef';
+    echo $appointmentTime;
+    echo $petName;
+    echo $businessId; 
+    InsertAppointment("2343",$businessId, $ownerId, $petName, $petSpecies, $appointmentTime, $status);
+    // header("Location: /PupsNPoodles/frontend/appointment.php");
+    }
+
+
+?>
 
 <?php
 include_once "MyFooter.php";
