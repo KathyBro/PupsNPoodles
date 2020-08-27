@@ -1,8 +1,8 @@
 <?php
-    require "DatabaseConnection.php";
-    if(array_key_exists('userId', $_SESSION)) {
-        $user = $_SESSION['userId'];
-    }
+    // include "DatabaseConnection.php";
+    // if(array_key_exists('userId', $_SESSION)) {
+    //     $user = $_SESSION['userId'];
+    // }
 ?>
 
 <!DOCTYPE html>
@@ -18,14 +18,14 @@
     <ul>
         <li><a href="/PupsNPoodles/frontend/index.php">Home</a></li>
         <?php
-        echo $_SESSION['userId'];
+            // echo $_SESSION['userId'];
             if(isset($_SESSION['userId']))
             {
-                echo '<li><a href="/frontend/login.php">Logout</a></li>';
+                echo '<li><a href="/PupsNPoodles/frontend/login.php">Logout</a></li>';
             }
             else
             {
-                echo '<li><a href="/frontend/login.php">Login</a></li>';
+                echo '<li><a href="/PupsNPoodles/frontend/login.php">Login</a></li>';
             }
         ?>
         <li><a href="/PupsNPoodles/frontend/appointment.php">Make an Appointment</a></li>

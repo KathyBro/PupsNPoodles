@@ -1,9 +1,9 @@
 <!-- REMEMBER TO WRITE LOTS OF COMMENTS!!! -->
 <?php
+    $title = "Home"; 
     include_once "MyHeader.php";
 ?>
 
-<h1>Index</h1>
 <?php
     //$appointments = getAppointments($user->userId);
     echo "<div class='appointment-list'>";

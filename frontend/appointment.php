@@ -33,9 +33,9 @@ include_once "MyHeader.php";
     $petSpecies = $_GET['petSpecies'];
     $businessId = $_GET['location'];
     $ownerId = 1231231;
-    $status = 'isSent';
+    $status = 'rejected';
 
-    echo 'kill yourslef';
+   
     echo $appointmentTime;
     echo $petName;
     echo $businessId; 

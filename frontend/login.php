@@ -1,4 +1,5 @@
 <?php
+    $title = "Login"; 
     include_once "MyHeader.php";
     include_once "..\backend\Helper.php";
 ?>
@@ -20,7 +21,7 @@ if (!isset($_SESSION['userId'])){
     else
     {
         //They are not logged in yet. Ask for their credentials
-        echo '<form method="post" action="/login">
+        echo '<form method="post" action="/PupsNPoodles/frontend/login">
         <label>Username:</label>
         <input class="appt" type="text" name="username"/>
         <br>
