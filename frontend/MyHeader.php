@@ -1,5 +1,7 @@
 <?php
-    require "DatabaseConnection.php";
+    session_start();
+
+    require "..\backend\DatabaseConnection.php";
     if(array_key_exists('userId', $_SESSION)) {
         $user = $_SESSION['userId'];
     }
@@ -16,11 +18,11 @@
 <title><?php echo $title?></title>
 <nav>
     <ul>
-        <li><a href="/PupsNPoodles/frontend/index.php">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <?php
-        echo $_SESSION['userId'];
             if(isset($_SESSION['userId']))
             {
+                echo $_SESSION['userId'];
                 echo '<li><a href="/frontend/login.php">Logout</a></li>';
             }
             else
