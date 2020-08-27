@@ -23,11 +23,20 @@ function FindUserId($dbConn, $username, $password)
     return mysqli_fetch_array($table)['id']; 
 }
 
-function InsertIntoAppointmentTable($dbConn, $id ,$businessId, $ownerId, $petName, $petSpecies, $appointmentTime, $status)
+function InsertIntoAppointmentTable($dbConn, $businessId, $ownerId, $petName, $petSpecies, $appointmentTime, $status)
 {
-    $query = "INSERT INTO appointmenttable (id, businessId, ownerId, petName, petSpecies, appointmentTime, status) VALUES ('" . $id . "','" . $businessId . "', " . $ownerId . ", " . $petName . ", " . $petSpecies . "" . $appointmentTime . "" . $status . ");";
+    $query = "INSERT INTO AppointmentTable (businessId, ownerId, petName, petSpecies, appointmentTime, status) VALUES (?, ?, ?, ?, ?, ?);";
 
-    return mysqli_query($dbConn, $query);
+    $prep = mysqli_prepare($dbConn, $query);
+
+    mysqli_stmt_bind_param($prep, "iissss", $businessId, $ownerId, $petName, $petSpecies, $appointmentTime, $status);
+
+    mysqli_stmt_execute($prep);
+
+    $affected_rows = mysqli_stmt_affected_rows($prep);
+    mysqli_stmt_close($prep);
+    // header("Location: /PupsNPoodles/frontend/appointment.php");
+    return $affected_rows;
 }
 
 ?>

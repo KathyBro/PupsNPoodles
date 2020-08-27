@@ -12,8 +12,8 @@ if (!isset($_SESSION['userId'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $id = Login($username, $password);
-        echo $id;
+         $id = Login($username, $password);
+        // echo $id;
         $_SESSION['userId'] = $id;
         echo $_SESSION['userId'];
         // header("Location: index.php");
