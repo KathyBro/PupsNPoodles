@@ -15,4 +15,12 @@ function ConnGet() {
     return $dbConn;
 }
 
+function FindUserId($dbConn, $username, $password)
+{
+    $query = "SELECT id FROM UserTable WHERE username='" . $username . "' AND password='" . $password . "';";
+
+    $table = mysqli_query($dbConn, $query);
+    return mysqli_fetch_array($table)['id'];
+}
+
 ?>

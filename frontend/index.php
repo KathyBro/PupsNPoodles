@@ -2,3 +2,5 @@
 <?php
     include_once "MyHeader.php";
 ?>
+
+<h1>Index</h1>

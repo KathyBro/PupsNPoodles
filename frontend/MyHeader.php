@@ -9,6 +9,17 @@
 <nav>
     <ul>
         <li><a href="/frontend/index.php">Home</a></li>
-        <li><a href="/frontend/login.php">Login</a></li>
+        <?php
+        echo $_SESSION['userId'];
+            if(isset($_SESSION['userId']))
+            {
+                echo '<li><a href="/frontend/login.php">Logout</a></li>';
+            }
+            else
+            {
+                echo '<li><a href="/frontend/login.php">Login</a></li>';
+            }
+        ?>
+        
     </ul>
 </nav>
