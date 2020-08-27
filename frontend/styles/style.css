@@ -2,4 +2,29 @@ html
 {
     background-color: pink;
     font-family: 'Londrina Solid', cursive;
+    text-align: center;
+    justify-content: center;
+    
 }
+
+label{
+    font-size: 18px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.appt{
+    margin-top: 10px;
+}
+
+/* #location{
+    margin-top: 10px
+} */
+
+
+
+
+
+

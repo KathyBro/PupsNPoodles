@@ -4,7 +4,7 @@
 DEFINE('DB_USER', 'root');
 DEFINE('DB_PSWD', '');
 DEFINE('DB_SERVER', 'localhost');
-DEFINE('DB_NAME', 'PupsNPoodles');
+DEFINE('DB_NAME', 'pupsnpoodles');
 
 function ConnGet() {
     // $dbConn will contain a resource link to the database
@@ -20,7 +20,14 @@ function FindUserId($dbConn, $username, $password)
     $query = "SELECT id FROM UserTable WHERE username='" . $username . "' AND password='" . $password . "';";
 
     $table = mysqli_query($dbConn, $query);
-    return mysqli_fetch_array($table)['id'];
+    return mysqli_fetch_array($table)['id']; 
+}
+
+function InsertIntoAppointmentTable($dbConn, $id ,$businessId, $ownerId, $petName, $petSpecies, $appointmentTime, $status)
+{
+    $query = "INSERT INTO appointmenttable (id, businessId, ownerId, petName, petSpecies, appointmentTime, status) VALUES ('" . $id . "','" . $businessId . "', " . $ownerId . ", " . $petName . ", " . $petSpecies . "" . $appointmentTime . "" . $status . ");";
+
+    return mysqli_query($dbConn, $query);
 }
 
 ?>

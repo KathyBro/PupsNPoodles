@@ -20,15 +20,15 @@ if (!isset($_SESSION['userId'])){
     else
     {
         //They are not logged in yet. Ask for their credentials
-        echo '<form method="post" action="login">
+        echo '<form method="post" action="/login">
         <label>Username:</label>
-        <input type="text" name="username"/>
+        <input class="appt" type="text" name="username"/>
         <br>
-        
+
         <label>Password:</label>
-        <input type="password" name="password"/>
+        <input class="appt" type="text" name="password"/>
         <br>
-        <button type="submit" value="Login">Login</button>
+        <button class="appt" type="submit" value="Login">Login</button>
         </form>';
     }
 }
@@ -41,3 +41,4 @@ else
 
 
 ?>
+
