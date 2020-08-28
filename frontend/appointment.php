@@ -22,12 +22,22 @@ $businessArray = GetAllBusinesses();
     
     <br />
     <label class="appt" for="petName">Pet Name:</label>
-    <input type="text" class="appt" id="petName" name="petName">
+    <!-- <input type="text" class="appt" id="petName" name="petName"> -->
+    <?php
+        //Dynamically grabbing pet info.
+        $petInfo = RetrievePets();
+        echo '<select class="appt" name="petName" id="petName">';
+        foreach ($petInfo as $info)
+        {
+            echo '<option value="' . $info['name'] . '-' . $info['species'] . '">' . $info['name'] . '</option>';
+        }
+        echo '</select>';
+    ?>
     <br />
 
-    <label class="appt" for="petSpecies">Pet Species:</label>
+    <!-- <label class="appt" for="petSpecies">Pet Species:</label>
     <input type="text" class="appt" id="petSpecies" name="petSpecies">
-    <br />
+    <br /> -->
     <button class="appt" value="Submit" type="submit">Submit</button>
     
 </form>
@@ -43,8 +53,10 @@ if (isset($_SESSION['userId'])){
 
     //saving values from form
     $appointmentTime = $_GET['date'];
-    $petName = $_GET['petName'];
-    $petSpecies = $_GET['petSpecies'];
+
+    $nameAndSpecies = explode("-", $_GET['petName']);
+    $petName = $nameAndSpecies[0];
+    $petSpecies = $nameAndSpecies[1];
     $businessId = $_GET['location'];
     $ownerId = $currentOwner;
     $status = 'pending';
