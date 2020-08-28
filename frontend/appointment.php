@@ -18,7 +18,6 @@ $businessArray = GetAllBusinesses();
         echo "<option value=\"" . $name . "\">"
             . $businessArray[$i] . "</option>";
     }?>
-
     </select>
     
     <br />
