@@ -75,14 +75,26 @@ function InsertUser($dbConn, $name, $username, $password, $isBusiness)
 
 function InsertPet($dbConn, $image, $name, $species, $ownerId)
 {
-    $query = "INSERT INTO PetTable(ownerId, name, species, image) VALUES (?, ?, ?, ?);";
+    $query = "INSERT INTO PetTable(ownerId, name, species, image) VALUES (" . $ownerId . ", '" . $name . "', '" . $species . "', '" . $image . "');";
 
-    $prep = mysqli_prepare($dbConn, $query);
+    mysqli_query($dbConn, $query);
 
-    mysqli_stmt_bind_param($prep, "issb", $ownerId, $name, $species, $image);
+    // $prep = mysqli_prepare($dbConn, $query);
 
-    mysqli_stmt_execute($prep);
+    // mysqli_stmt_bind_param($prep, "issb", $ownerId, $name, $species, $image);
+
+    // mysqli_stmt_execute($prep);
 }
+
+function PetsByOwner($dbConn, $ownerId)
+{
+    $query = "SELECT * FROM PetTable WHERE ownerId=" . $ownerId . ";";
+
+    $table = mysqli_query($dbConn, $query);
+
+    return mySqli_fetch_all($table, MYSQLI_ASSOC);
+}
+
 function GetAppointmentsByUser($dbConn, $userId) {
     $query = "SELECT apt.id, apt.businessId as 'BuisnessId', apt.petName, apt.petSpecies, apt.appointmentTime, apt.status, ut.name as 'BuisnessName' FROM appointmenttable apt JOIN usertable ut ON ut.id = apt.businessId WHERE ownerId='" . $userId . "';";
 

@@ -68,7 +68,8 @@
         $petName = htmlspecialchars($petName);
         $species = htmlspecialchars($species);
 
-        $target_dir = "upload/";
+        // $name = $_FILES['file']['name'];
+        $target_dir = "../upload/";
         $target_file = $target_dir . basename($_FILES["file"]["name"]);
 
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -79,6 +80,8 @@
         {
             $image_base64 = base64_encode(file_get_contents($_FILES['file']['tmp_name']));
             $image = 'data:image/' . $imageFileType . ';base64, ' . $image_base64;
+            
+            // move_uploaded_file($_FILES['file']['tmp_name'], $target_dir . $name);
 
             InsertPet($dbConn, $image, $petName, $species, $_SESSION['userId']);
         }
@@ -98,6 +101,22 @@
 
         return $petData;
     }
+
+    function DisplayOnlyPets()
+    {
+        $petsTable = RetrievePets();
+
+        foreach ($petsTable as $pet)
+        {
+            echo "<div class='appointment-listing'>";
+                echo "<h3>" . $pet["name"] . "</h3>";
+                echo "<h4>" . $pet["species"] . "</h4>";
+                echo "<img src='" . $pet["image"] . "'>";
+                echo "</div>";
+        }
+    }
+
+
 
     function GetAppointments($userId) {
         $dbConn = ConnGet();

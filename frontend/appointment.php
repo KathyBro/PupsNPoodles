@@ -5,7 +5,7 @@ include_once "..\backend\Helper.php";
 $businessArray = GetAllBusinesses();
 ?>
 <html id="appointment-body">
-<form method=\"post\"> <label class="appt" for="date">Time (date and time):</label>
+<form method="post"> <label class="appt" for="date">Time (date and time):</label>
     <input type="datetime-local" id="date" name="date">
     <br />
 
@@ -52,7 +52,7 @@ if (isset($_SESSION['userId'])){
   
     //Sends data to backend   
     InsertAppointment($businessId, $ownerId, $petName, $petSpecies, $appointmentTime, $status);
-
+    }
     
 }
 

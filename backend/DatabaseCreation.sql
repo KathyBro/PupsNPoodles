@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS PetTable(
     ownerId INT NOT NULL,
     name VARCHAR(25) NOT NULL,
     species VARCHAR(25) NOT NULL,
-    image longtext
+    image LONGBLOB
 );
 
 INSERT INTO UserTable(name, username, password, isBusiness) VALUES ('Test User', 'test', 'test', 0);

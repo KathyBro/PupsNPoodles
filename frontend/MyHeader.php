@@ -5,8 +5,6 @@
     if(isset($_SESSION['userId'])) {
         $user = GetUser($_SESSION['userId']);
     }
-
-    $title = "Home";
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1><?php echo $title?></h1>
+<!-- <h1><?php echo $title?></h1> -->
 <nav>
     <h1 id="main-header">Pups N Poodles</h1>
     <ul>
@@ -27,7 +25,8 @@
             {
                 echo '<li><a href="login.php">Logout</a></li>';
                 echo '<li><a href="appointment.php">Make an Appointment</a></li>';
-                echo '<li><a href="addPet.php">Add a Pet</a></li>';
+                echo '<li><a href="profile.php">Profile</a></li>';
+                
             }
             else
             {
