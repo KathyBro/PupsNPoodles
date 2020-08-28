@@ -37,6 +37,7 @@ $businessArray = GetAllBusinesses();
     //Grabs currentUser's Id
     $currentOwner = $_SESSION['userId'];
 
+if (isset($_SESSION['userId'])){
     //only allow submit if data is present
     if(isset($_GET['date'])){
 
