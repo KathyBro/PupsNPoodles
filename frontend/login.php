@@ -12,7 +12,11 @@ if (!isset($_SESSION['userId'])){
         //They are not logged in yet, but have given credentials to log in.
         $username = $_POST['username'];
         $password = $_POST['password'];
+
+        //Grabbing user id that matches username and password
         $id = Login($username, $password);
+
+        //Takes user to home page after succesful loggin and session storage
         header("Location: index.php");
     }
     else
@@ -37,7 +41,6 @@ else
     //They are logged in but are trying to log out.
     Logout();
      header("Location: login.php");
-    //  header(`Location: /frontend/appointment.php?`. $_SESSION['userId'] .``);
 }
 
 echo '</html>'

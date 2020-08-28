@@ -2,8 +2,12 @@
 $title = "Create an Appointment";
 include_once "MyHeader.php";
 include_once "..\backend\Helper.php";
+
+//Stores SQL user table that match buisness criteria 
 $businessArray = GetAllBusinesses();
 ?>
+
+<!-- Main Form for Appointments Page creation -->
 <html id="appointment-body">
 <form method="post" action="appointment.php"> <label class="appt" for="date">Time (date and time):</label>
     <input type="datetime-local" id="date" name="date">
@@ -66,6 +70,7 @@ $businessArray = GetAllBusinesses();
     ?>
 
 </html>
+
 <?php
-// include_once "MyFooter.php";
+    include_once "MyFooter.php";
 ?>

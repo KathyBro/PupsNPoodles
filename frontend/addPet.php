@@ -30,3 +30,7 @@ echo '<html id="addPet-body">';
 <?php 
     echo '</html>';
 ?>
+
+<?php
+    include_once "MyFooter.php";
+?>
