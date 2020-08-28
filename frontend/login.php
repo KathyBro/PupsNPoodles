@@ -1,4 +1,5 @@
 <?php
+    $title = "Login"; 
     include_once "MyHeader.php";
     include_once "..\backend\Helper.php";
 ?>
@@ -11,25 +12,26 @@ if (!isset($_SESSION['userId'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $id = Login($username, $password);
-        echo $id;
-        $_SESSION['userId'] = $id;
-        echo $_SESSION['userId'];
-        // header("Location: index.php");
+        Login($username, $password);
+        // echo $id;
+        // $_SESSION['userId'] = $id;
+        // echo $_SESSION['userId'];
+        header("Location: index.php");
     }
     else
     {
         //They are not logged in yet. Ask for their credentials
-        echo '<form method="post" action="/login">
+        echo '<form method="post" action="login">
         <label>Username:</label>
         <input class="appt" type="text" name="username"/>
         <br>
 
         <label>Password:</label>
-        <input class="appt" type="text" name="password"/>
+        <input class="appt" type="password" name="password"/>
         <br>
         <button class="appt" type="submit" value="Login">Login</button>
-        </form>';
+        </form>
+        <a href="createAccount.php">Create New Account</a>';
     }
 }
 else
