@@ -62,4 +62,41 @@
         mysqli_close($dbConn);
     }
 
+    function UploadPet($petName, $species)
+    {
+        $dbConn = ConnGet();
+        $petName = htmlspecialchars($petName);
+        $species = htmlspecialchars($species);
+
+        $target_dir = "upload/";
+        $target_file = $target_dir . basename($_FILES["file"]["name"]);
+
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+        $fileExtensions = array("jpg", "jpeg", "png", "gif");
+
+        if(in_array($imageFileType, $fileExtensions))
+        {
+            $image_base64 = base64_encode(file_get_contents($_FILES['file']['tmp_name']));
+            $image = 'data:image/' . $imageFileType . ';base64, ' . $image_base64;
+
+            InsertPet($dbConn, $image, $petName, $species, $_SESSION['userId']);
+        }
+
+        mysqli_close($dbConn);
+
+    }
+
+    function RetrievePets()
+    {
+        $dbConn = ConnGet();
+
+        $ownerId = $_SESSION['userId'];
+        $petData = PetsByOwner($dbConn, $ownerId);
+
+        mysqli_close($dbConn);
+
+        return $petData;
+    }
+
 ?>

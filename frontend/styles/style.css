@@ -20,6 +20,10 @@ html {
   background-color: #ffe26d;
 }
 
+#pet-body {
+  background-color: #ffe26d;
+}
+
 #createAccount-body {
   background-image: url("https://cdn.lowgif.com/full/f1aa317b255071a4-.gif");
   background-color: #ffe26d;
@@ -27,7 +31,7 @@ html {
 }
 
 #main-header {
-  font-size: 40px;
+  font-size: 50px;
   color: azure;
 }
 

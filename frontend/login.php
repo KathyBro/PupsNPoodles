@@ -12,14 +12,16 @@ if (!isset($_SESSION['userId'])){
         //They are not logged in yet, but have given credentials to log in.
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $id = Login($username, $password);
+        Login($username, $password);
+
+        // echo $_SESSION['userId'];
         header("Location: index.php");
     }
     else
     {
 
         //They are not logged in yet. Ask for their credentials
-        echo '<form method="post" action="index.php">
+        echo '<form method="post" action="login.php">
         <label>Username:</label>
         <input class="appt" type="text" name="username"/>
         <br>

@@ -59,4 +59,15 @@ function InsertUser($dbConn, $name, $username, $password, $isBusiness)
     mysqli_stmt_execute($prep);
 }
 
+function InsertPet($dbConn, $image, $name, $species, $ownerId)
+{
+    $query = "INSERT INTO PetTable(ownerId, name, species, image) VALUES (?, ?, ?, ?);";
+
+    $prep = mysqli_prepare($dbConn, $query);
+
+    mysqli_stmt_bind_param($prep, "issb", $ownerId, $name, $species, $image);
+
+    mysqli_stmt_execute($prep);
+}
+
 ?>

@@ -26,6 +26,7 @@
             {
                 echo '<li><a href="login.php">Logout</a></li>';
                 echo '<li><a href="appointment.php">Make an Appointment</a></li>';
+                echo '<li><a href="addPet.php">Add a Pet</a></li>';
             }
             else
             {
