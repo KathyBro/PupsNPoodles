@@ -24,4 +24,3 @@ CREATE TABLE IF NOT EXISTS AppointmentTable(
 );
 
 INSERT INTO UserTable(name, username, password, isBusiness) VALUES ('Test User', 'test', 'test', 0);
-);

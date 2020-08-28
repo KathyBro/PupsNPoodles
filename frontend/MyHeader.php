@@ -1,10 +1,12 @@
 <?php
     session_start();
 
-    require "..\backend\DatabaseConnection.php";
-    if(array_key_exists('userId', $_SESSION)) {
-        $user = $_SESSION['userId'];
+    require "..\backend\Helper.php";
+    if(isset($_SESSION['userId'])) {
+        $user = GetUser($_SESSION['userId']);
     }
+
+    $title = "Home";
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-<title><?php echo $title?></title>
+<h1><?php echo $title?></h1>
 <nav>
     <ul>
         <li><a href="index.php">Home</a></li>
@@ -31,5 +33,4 @@
             }
         ?>
     </ul>
-    <h1><?php echo $title?></h1>
 </nav>

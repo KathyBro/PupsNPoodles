@@ -27,7 +27,7 @@ include_once "..\backend\Helper.php";
 </form>
 
 <?php
-if (!isset($_SESSION['userId'])){
+if (isset($_SESSION['userId'])){
     //only allow submit if data is present
     if(isset($_GET['date'])){
     $appointmentTime = $_GET['date'];

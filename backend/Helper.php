@@ -44,4 +44,49 @@
         mysqli_close($dbConn);
     }
 
+    function GetAppointments($userId) {
+        $dbConn = ConnGet();
+
+        $userId = htmlspecialchars($userId);
+
+        $appointments = GetAppointmentsByUser($dbConn, $userId);
+        mysqli_close($dbConn);
+        return $appointments;
+    }
+
+    function GetBusinessAppointments($userId) {
+        $dbConn = ConnGet();
+
+        $userId = htmlspecialchars($userId);
+
+        $appointments = GetAppointmentsByBusiness($dbConn, $userId);
+        mysqli_close($dbConn);
+        return $appointments;
+    }
+
+    function GetUser($userId) {
+        $dbConn = ConnGet();
+
+        $userId = htmlspecialchars($userId);
+
+        $appointments = FindUserById($dbConn, $userId);
+        mysqli_close($dbConn);
+        return $appointments;
+    }
+
+    function UpdateAppointmentStatus($aptId, $status) {
+        $dbConn = ConnGet();
+
+        $aptId = htmlspecialchars($aptId);
+        $status = htmlspecialchars($status);
+        SetAppointmentStatus($dbConn, $aptId, $status);
+        mysqli_close($dbConn);
+    }
+
+    function RemoveAppointment($aptId) {
+        $dbConn = ConnGet();
+
+        $aptId = htmlspecialchars($aptId);
+        DeleteAppointment($dbConn, $aptId);
+    }
 ?>
