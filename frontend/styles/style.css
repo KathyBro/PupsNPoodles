@@ -1,30 +1,119 @@
-html
-{
-    background-color: pink;
-    font-family: 'Londrina Solid', cursive;
-    text-align: center;
-    justify-content: center;
-    
+html {
+  /* background-color: pink; */
+  font-family: "Londrina Solid", cursive;
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-label{
-    font-size: 18px;
+#login-body {
+  background-image: url("https://cdn.lowgif.com/full/f1aa317b255071a4-.gif");
+  background-color: #ffe26d;
+  background-repeat: no-repeat;
 }
 
-ul{
-    list-style-type: none;
+#index-body {
+  background-color: #ffe26d;
 }
 
-.appt{
-    margin-top: 10px;
+#appointment-body {
+  background-color: #ffe26d;
+}
+
+#createAccount-body {
+  background-image: url("https://cdn.lowgif.com/full/f1aa317b255071a4-.gif");
+  background-color: #ffe26d;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  font-size: 40px;
+  color: blue;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+button {
+  margin-bottom: 12px;
+}
+
+label {
+  font-size: 21px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  display: inline;
+}
+
+input {
+  border-radius: 25px;
+  border: 2px solid blue;
+  height: 24px;
+  padding-left: 10px;
+}
+
+input[type="text"]:focus {
+  background-color: rgb(246, 249, 250);
+  border: 3px solid rgb(255, 0, 0);
+  color: #000;
+}
+
+input[type="password"]:focus {
+  background-color: rgb(246, 249, 250);
+  border: 3px solid rgb(255, 0, 0);
+  color: #000;
+}
+
+#location{
+    height: 34px;
+    width: 91px;
+    color: red;
+    border-style: double;
+    border-width: 3px;
+    border-color: blue;
+}
+
+button{
+    height: 28px;
+    width: 56px;
+    color: white;
+    background-color: red;
+    border-color: cornsilk;
+}
+
+
+
+li a {
+  margin-right: 10px;
+  background-color: red;
+  box-shadow: 0 5px 0 darkred;
+  color: white;
+  padding: 6px 10px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+li a:hover {
+  background-color: #ce0606;
+}
+
+li a:active {
+  box-shadow: none;
+  top: 5px;
+}
+
+.appt {
+  margin-top: 10px;
 }
 
 /* #location{
     margin-top: 10px
 } */
-
-
-
-
-
-

@@ -26,6 +26,24 @@
         mysqli_close($dbConn);
     }
 
+    function GetAllBusinesses()
+    {
+        $dbConn = ConnGet();
+
+        $returnedTable = ReturnBuissness($dbConn);
+
+        $i = 0;
+        $returningArray = null;
+        while ($row = mysqli_fetch_row($returnedTable))
+        {
+            $returningArray[$i] = $row[0];
+            $i++;
+        }
+
+        mysqli_close($dbConn);
+        return $returningArray;
+    }
+
     function InsertNewUser($name, $username, $password, $isBusiness)
     {
         $dbConn = ConnGet();
