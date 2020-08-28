@@ -23,5 +23,15 @@ CREATE TABLE IF NOT EXISTS AppointmentTable(
     status ENUM('pending', 'rejected', 'accepted')
 );
 
+CREATE TABLE IF NOT EXISTS PetTable(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    ownerId INT NOT NULL,
+    name VARCHAR(25) NOT NULL,
+    species VARCHAR(25) NOT NULL,
+    image LONGBLOB
+);
+
 INSERT INTO UserTable(name, username, password, isBusiness) VALUES ('Test User', 'test', 'test', 0);
 );
+
+INSERT INTO UserTable(name, username, password, isBusiness) VALUES ('Business 1', 'business', 'business', 1);

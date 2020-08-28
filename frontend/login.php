@@ -19,7 +19,7 @@ if (!isset($_SESSION['userId'])){
     {
 
         //They are not logged in yet. Ask for their credentials
-        echo '<form method="post" action="index.php">
+        echo '<form method="post" action="login.php">
         <label>Username:</label>
         <input class="appt" type="text" name="username"/>
         <br>
