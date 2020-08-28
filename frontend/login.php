@@ -11,11 +11,12 @@ if (!isset($_SESSION['userId'])){
         //They are not logged in yet, but have given credentials to log in.
         $username = $_POST['username'];
         $password = $_POST['password'];
-        echo "asfdsdafsdfasfasf";
         $id = Login($username, $password);
-        $_SESSION['userId'] = $id;
+        echo $username;
+        echo $password;
+        // echo $id;
         echo $_SESSION['userId'];
-        header(`Location: login.php`);
+        header(`Location: /PupsNPoodles/frontend/login.php`);
         // header(`Location: /frontend/Index.php?saf`. $_SESSION['userId'] .``);
     }
     else
@@ -23,16 +24,17 @@ if (!isset($_SESSION['userId'])){
         // echo "afkjskfjsklfslf";
         // echo $id;
         //They are not logged in yet. Ask for their credentials
-        echo '<form method="post">
+        echo '<form method="post" action="login">
         <label>Username:</label>
         <input class="appt" type="text" name="username"/>
         <br>
 
         <label>Password:</label>
-        <input class="appt" type="text" name="password"/>
+        <input class="appt" type="password" name="password"/>
         <br>
         <button class="appt" type="submit" value="Login">Login</button>
-        </form>';
+        </form>
+        <a href="createAccount.php">Create New Account</a>';
     }
 }
 else

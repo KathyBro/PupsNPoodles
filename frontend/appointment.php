@@ -1,10 +1,10 @@
 <?php
 $title = "Create an Appointment";
-include_once "..\backend\Helper.php";
 include_once "MyHeader.php";
+include_once "..\backend\Helper.php";
 ?>
 
-<form method=\"post\"> <label class="appt" for="date">Time (date and time):</label>
+<form method="post"> <label class="appt" for="date">Time (date and time):</label>
     <input type="datetime-local" id="date" name="date">
     <br />
     <label class="appt" for="location">Pick a Location:</label>
@@ -24,6 +24,7 @@ include_once "MyHeader.php";
     <input type="text" class="appt" id="petSpecies" name="petSpecies">
     <br />
     <input class="appt" value="Submit" type="submit">
+    
 </form>
 
 <?php
@@ -35,6 +36,7 @@ if (!isset($_SESSION['userId'])){
     $petSpecies = $_GET['petSpecies'];
     $businessId = 12;
     $ownerId = $_SESSION['userId'];
+    echo $ownerId; 
     $status = 'pending';
     $appointmentTime = strftime('%d/%m/%y %H:%M', strtotime($appointmentTime));
     echo strftime('%d/%m/%y %H:%M', strtotime($appointmentTime));

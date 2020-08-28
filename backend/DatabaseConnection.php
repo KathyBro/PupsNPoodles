@@ -39,4 +39,15 @@ function InsertIntoAppointmentTable($dbConn, $businessId, $ownerId, $petName, $p
     return $affected_rows;
 }
 
+function InsertUser($dbConn, $name, $username, $password, $isBusiness)
+{
+    $query = "INSERT INTO UserTable(name, username, password, isBusiness) VALUES (?, ?, ?, ?);";
+
+    $prep = mysqli_prepare($dbConn, $query);
+
+    mysqli_stmt_bind_param($prep, "sssi", $name, $username, $password, $isBusiness);
+
+    mysqli_stmt_execute($prep);
+}
+
 ?>
