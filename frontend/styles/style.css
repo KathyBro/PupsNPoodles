@@ -26,8 +26,19 @@ html {
   background-repeat: no-repeat;
 }
 
-h1 {
+#main-header {
   font-size: 40px;
+  color: azure;
+}
+
+#sub-header {
+  font-size: 25px;
+  padding-top: 18px;
+}
+
+h1 {
+  font-size: 20px;
+  margin-top: 10px;
   color: blue;
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
     0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
@@ -71,24 +82,32 @@ input[type="password"]:focus {
   color: #000;
 }
 
-#location{
-    height: 34px;
-    width: 91px;
-    color: red;
-    border-style: double;
-    border-width: 3px;
-    border-color: blue;
+#createBtn {
+  width: 70px;
+  height: 41px;
+  margin-top: 10px;
 }
 
-button{
-    height: 28px;
-    width: 56px;
-    color: white;
-    background-color: red;
-    border-color: cornsilk;
+.createInput {
+  margin-bottom: 12px;
 }
 
+#location {
+  height: 34px;
+  width: 91px;
+  color: red;
+  border-style: double;
+  border-width: 3px;
+  border-color: blue;
+}
 
+button {
+  height: 28px;
+  width: 56px;
+  color: white;
+  background-color: red;
+  border-color: cornsilk;
+}
 
 li a {
   margin-right: 10px;
