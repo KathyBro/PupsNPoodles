@@ -40,6 +40,14 @@ function InsertIntoAppointmentTable($dbConn, $businessId, $ownerId, $petName, $p
     return $affected_rows;
 }
 
+function ReturnBuissness($dbConn)
+{
+    // $query = "SELECT name FROM UserTable WHERE 'isBusiness'='1';";
+    $query = "SELECT name FROM usertable WHERE `isBusiness` = 1;";
+
+    return mysqli_query($dbConn, $query);
+}
+
 function InsertUser($dbConn, $name, $username, $password, $isBusiness)
 {
     $query = "INSERT INTO UserTable(name, username, password, isBusiness) VALUES (?, ?, ?, ?);";
