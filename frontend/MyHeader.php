@@ -18,6 +18,7 @@
 <body>
 <title><?php echo $title?></title>
 <nav>
+    <h1 id="main-header">Pups N Poodles</h1>
     <ul>
         <li><a href="index.php">Home</a></li>
         <?php
@@ -32,5 +33,5 @@
             }
         ?>
     </ul>
-    <h1><?php echo $title?></h1>
+    <h1 id="sub-header"><?php echo $title?></h1>
 </nav>

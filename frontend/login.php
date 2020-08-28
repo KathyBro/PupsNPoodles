@@ -13,13 +13,13 @@ if (!isset($_SESSION['userId'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
         $id = Login($username, $password);
-        // header(`Location: /frontend/Index.php?saf`. $_SESSION['userId'] .``);
+        header("Location: index.php");
     }
     else
     {
 
         //They are not logged in yet. Ask for their credentials
-        echo '<form method="post" action="index">
+        echo '<form method="post" action="index.php">
         <label>Username:</label>
         <input class="appt" type="text" name="username"/>
         <br>

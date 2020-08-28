@@ -22,17 +22,17 @@
     {
         echo '<form method="post" action="createAccount.php">
         <label>Name</label>
-        <input type="text" name="name" placeholder="Name"/><br>
+        <input class="createInput" type="text" name="name" placeholder="Name"/><br>
         <label>Username</label>
-        <input type="text" name="username" placeholder="Username"/><br>
+        <input class="createInput" type="text" name="username" placeholder="Username"/><br>
         <label>Password</label>
-        <input type="text" name="password" placeholder="Password"/><br>
+        <input class="createInput" type="text" name="password" placeholder="Password"/><br>
         <label>Are you a business?</label><br/>
         <label>Yes</label>
         <input type="radio" value="Yes" name="business">
         <label>No</label>
         <input type="radio" value="No" name="business"><br>
-        <button type="submit" value="submit">Create Account</button>
+        <button type="submit" value="submit" id="createBtn">Create Account</button>
         </form>';
     }
 
