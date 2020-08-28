@@ -6,14 +6,18 @@
 
 <?php
 echo '<html id="pet-body">';
+    //If they posted, then that means they are adding a pet.
     if(isset($_POST['Upload']))
     {
         $petName = $_POST['petName'];
         $species = $_POST['species'];
 
         UploadPet($petName, $species);
+
+        echo '<h2>Your pet has been saved!</h2>';
     }
 ?>
+<!-- The form to add a pet to a user -->
 
 <form method="post" action="" enctype='multipart/form-data'>
     <label class="appt">Image</label>
