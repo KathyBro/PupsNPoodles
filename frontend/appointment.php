@@ -2,6 +2,8 @@
 $title = "Create an Appointment";
 include_once "MyHeader.php";
 include_once "..\backend\Helper.php";
+
+//Stores SQL user table that match buisness criteria 
 $businessArray = GetAllBusinesses();
 
 if(!isset($_SESSION['userId']) || $_SESSION['isBusiness'] == true)
@@ -9,6 +11,8 @@ if(!isset($_SESSION['userId']) || $_SESSION['isBusiness'] == true)
         header("Location: login.php");
     }
 ?>
+
+<!-- Main Form for Appointments Page creation -->
 <html id="appointment-body">
 <form method="post" action="appointment.php"> <label class="appt" for="date">Time (date and time):</label>
     <input type="datetime-local" id="date" name="date">
@@ -71,6 +75,7 @@ if(!isset($_SESSION['userId']) || $_SESSION['isBusiness'] == true)
     ?>
 
 </html>
+
 <?php
-// include_once "MyFooter.php";
+    include_once "MyFooter.php";
 ?>

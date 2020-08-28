@@ -86,12 +86,6 @@ function InsertPet($dbConn, $image, $name, $species, $ownerId)
     $query = "INSERT INTO PetTable(ownerId, name, species, image) VALUES (" . $ownerId . ", '" . $name . "', '" . $species . "', '" . $image . "');";
 
     mysqli_query($dbConn, $query);
-
-    // $prep = mysqli_prepare($dbConn, $query);
-
-    // mysqli_stmt_bind_param($prep, "issb", $ownerId, $name, $species, $image);
-
-    // mysqli_stmt_execute($prep);
 }
 
 function PetsByOwner($dbConn, $ownerId)
