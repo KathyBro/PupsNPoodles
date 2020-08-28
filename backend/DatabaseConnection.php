@@ -34,8 +34,9 @@ function InsertIntoAppointmentTable($dbConn, $businessId, $ownerId, $petName, $p
     mysqli_stmt_execute($prep);
 
     $affected_rows = mysqli_stmt_affected_rows($prep);
+    
     mysqli_stmt_close($prep);
-    // header("Location: /PupsNPoodles/frontend/appointment.php");
+
     return $affected_rows;
 }
 

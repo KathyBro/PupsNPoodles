@@ -16,7 +16,7 @@ if (!isset($_SESSION['userId'])){
         echo $password;
         // echo $id;
         echo $_SESSION['userId'];
-        header(`Location: /PupsNPoodles/frontend/login.php`);
+        header(`Location: /PupsNPoodles/frontend/index.php`);
         // header(`Location: /frontend/Index.php?saf`. $_SESSION['userId'] .``);
     }
     else

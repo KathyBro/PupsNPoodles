@@ -4,7 +4,7 @@ include_once "MyHeader.php";
 include_once "..\backend\Helper.php";
 ?>
 
-<form method="post"> <label class="appt" for="date">Time (date and time):</label>
+<form method=\"post\"> <label class="appt" for="date">Time (date and time):</label>
     <input type="datetime-local" id="date" name="date">
     <br />
     <label class="appt" for="location">Pick a Location:</label>
@@ -28,24 +28,25 @@ include_once "..\backend\Helper.php";
 </form>
 
 <?php
-if (!isset($_SESSION['userId'])){
+    //Grabs currentUser's Id
+    $currentOwner = $_SESSION['userId'];
+
     //only allow submit if data is present
     if(isset($_GET['date'])){
+
+    //saving values from form
     $appointmentTime = $_GET['date'];
     $petName = $_GET['petName'];
     $petSpecies = $_GET['petSpecies'];
     $businessId = 12;
-    $ownerId = $_SESSION['userId'];
-    echo $ownerId; 
+    $ownerId = $currentOwner;
     $status = 'pending';
     $appointmentTime = strftime('%d/%m/%y %H:%M', strtotime($appointmentTime));
-    echo strftime('%d/%m/%y %H:%M', strtotime($appointmentTime));
+  
+    //Sends data to backend   
     InsertAppointment($businessId, $ownerId, $petName, $petSpecies, $appointmentTime, $status);
-    // header("Location: /PupsNPoodles/frontend/appointment.php");
-    }
-}
-else{
-    echo "Please Login before making an appointment"; 
+
+    
 }
 
 ?>
