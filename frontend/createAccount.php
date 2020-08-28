@@ -6,6 +6,7 @@
 
 <?php
     //If they have posted, then insert and log them in.
+    echo '<html id="createAccount-body">';
     if(array_key_exists("username", $_POST))
     {
         $name = $_POST['name'];
@@ -35,5 +36,5 @@
         </form>';
     }
 
-
+echo '</html>'; 
 ?>

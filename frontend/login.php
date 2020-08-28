@@ -5,6 +5,7 @@
     ?>
 
 <?php
+echo '<html id="login-body">';
 if (!isset($_SESSION['userId'])){
     if(array_key_exists("username", $_POST))
     {
@@ -12,19 +13,13 @@ if (!isset($_SESSION['userId'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
         $id = Login($username, $password);
-        echo $username;
-        echo $password;
-        // echo $id;
-        echo $_SESSION['userId'];
-        header(`Location: /PupsNPoodles/frontend/index.php`);
         // header(`Location: /frontend/Index.php?saf`. $_SESSION['userId'] .``);
     }
     else
     {
-        // echo "afkjskfjsklfslf";
-        // echo $id;
+
         //They are not logged in yet. Ask for their credentials
-        echo '<form method="post" action="login">
+        echo '<form method="post" action="index">
         <label>Username:</label>
         <input class="appt" type="text" name="username"/>
         <br>
@@ -45,6 +40,6 @@ else
     //  header(`Location: /frontend/appointment.php?`. $_SESSION['userId'] .``);
 }
 
-
+echo '</html>'
 ?>
 

@@ -5,6 +5,7 @@
 ?>
 
 <?php
+echo '<html id="index-body">';
     //$appointments = getAppointments($user->userId);
     echo "<div class='appointment-list'>";
     /*for($appointment in $appointments) {
@@ -17,6 +18,7 @@
         echo </div>
     }*/
     echo "</div>";
+    echo '</html>';
 ?>
 
 <?php
