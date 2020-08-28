@@ -5,8 +5,7 @@
     ?>
 
 <?php
-echo '<html id="pet-body">';
-    //If they posted, then that means they are adding a pet.
+echo '<html id="addPet-body">';
     if(isset($_POST['Upload']))
     {
         $petName = $_POST['petName'];
@@ -21,7 +20,7 @@ echo '<html id="pet-body">';
 
 <form method="post" action="" enctype='multipart/form-data'>
     <label class="appt">Image</label>
-    <input class="appt" type='file' name='file' />
+    <input class="appt" type='file' name='file' id="petFile"/>
     <br>
     <label class="appt">Name</label>
     <input class="appt" type="text" name="petName"/>
@@ -32,4 +31,6 @@ echo '<html id="pet-body">';
     <button class="appt" type='submit' name='Upload'>Save</button>
 </form>
 
-</html>
+<?php 
+    echo '</html>';
+?>

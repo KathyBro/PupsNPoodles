@@ -15,10 +15,16 @@
 ?>
 
 <div>
-    <h2><?php if(isset($_SESSION['userId'])) echo $user["name"] . "'s Appointments"?></h2>
+    <h2 id="aptHeader"><?php if(isset($_SESSION['userId'])) echo $user["name"] . "'s Appointments"?></h2>
 </div>
 
 <?php
+echo '<html id="index-body">';
+
+    echo "<div class='appointment-list'>";
+
+    echo "</div>";
+    echo '</html>';
     if(isset($_SESSION['userId'])) {
         if($user["isBusiness"] == true) {
             $appointments = GetBusinessAppointments($user["id"]);

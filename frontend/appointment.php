@@ -36,6 +36,7 @@ $businessArray = GetAllBusinesses();
     <button class="appt" value="Submit" type="submit">Submit</button>
     
 </form>
+</html>
 
 <?php
     //Grabs currentUser's Id

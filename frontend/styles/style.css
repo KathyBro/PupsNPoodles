@@ -1,5 +1,4 @@
 html {
-  /* background-color: pink; */
   font-family: "Londrina Solid", cursive;
   text-align: center;
   justify-content: center;
@@ -20,8 +19,14 @@ html {
   background-color: #ffe26d;
 }
 
-#pet-body {
+#addPet-body {
   background-color: #ffe26d;
+}
+
+#petFile{
+    border: none;
+    background-color: cornsilk;
+    font-size: 14px;
 }
 
 #createAccount-body {
@@ -105,6 +110,15 @@ input[type="password"]:focus {
   border-color: blue;
 }
 
+#petName {
+    height: 34px;
+    width: 91px;
+    color: red;
+    border-style: double;
+    border-width: 3px;
+    border-color: blue;
+}
+
 button {
   height: 28px;
   width: 56px;
@@ -124,6 +138,11 @@ li a {
   text-transform: uppercase;
 }
 
+h3{
+    font-size: 26px;
+    font-style: oblique;
+}
+
 li a:hover {
   background-color: #ce0606;
 }
@@ -133,10 +152,19 @@ li a:active {
   top: 5px;
 }
 
+#aptHeader{
+    font-style: italic;
+    text-decoration: overline;
+}
+
+#petHeader {
+    color: #ffffff;
+    text-shadow: -1px -1px 1px #000, 1px 1px 1px #ccc;
+    letter-spacing: 1px;
+    text-decoration: underline;
+}
+
 .appt {
   margin-top: 10px;
 }
 
-/* #location{
-    margin-top: 10px
-} */

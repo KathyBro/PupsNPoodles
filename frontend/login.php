@@ -12,9 +12,7 @@ if (!isset($_SESSION['userId'])){
         //They are not logged in yet, but have given credentials to log in.
         $username = $_POST['username'];
         $password = $_POST['password'];
-        Login($username, $password);
-
-        // echo $_SESSION['userId'];
+        $id = Login($username, $password);
         header("Location: index.php");
     }
     else
