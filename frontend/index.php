@@ -1,4 +1,5 @@
 <!-- REMEMBER TO WRITE LOTS OF COMMENTS!!! -->
+<html id="index-body">
 <?php
     $title = "Home"; 
     include_once "MyHeader.php";
@@ -68,7 +69,12 @@
             echo "</div>";
         }
     }
+    else
+    {
+        echo '<h2>Login to create pets and make appointments for them. Unless you are a business, then you can accept appointments!</h2>';
+    }
 ?>
+</html>
 
 <?php
     include_once "MyFooter.php";

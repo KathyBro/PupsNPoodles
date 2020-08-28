@@ -36,7 +36,8 @@
         $returningArray = null;
         while ($row = mysqli_fetch_row($returnedTable))
         {
-            $returningArray[$i] = $row[0];
+            $returningArray[$i][0] = $row[0];//0 is id
+            $returningArray[$i][1] = $row[1];//1 is name
             $i++;
         }
 
