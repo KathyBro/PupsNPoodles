@@ -1,10 +1,10 @@
 <?php
 $title = "Create an Appointment";
-include_once "..\backend\Helper.php";
 include_once "MyHeader.php";
+include_once "..\backend\Helper.php";
 ?>
 
-<form method=\"post\"> <label class="appt" for="date">Time (date and time):</label>
+<form method="post"> <label class="appt" for="date">Time (date and time):</label>
     <input type="datetime-local" id="date" name="date">
     <br />
     <label class="appt" for="location">Pick a Location:</label>

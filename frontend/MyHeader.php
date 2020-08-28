@@ -22,15 +22,14 @@
         <?php
             if(isset($_SESSION['userId']))
             {
-                echo $_SESSION['userId'];
                 echo '<li><a href="login.php">Logout</a></li>';
+                echo '<li><a href="appointment.php">Make an Appointment</a></li>';
             }
             else
             {
                 echo '<li><a href="login.php">Login</a></li>';
             }
         ?>
-        <li><a href="appointment.php">Make an Appointment</a></li>
     </ul>
     <h1><?php echo $title?></h1>
 </nav>
