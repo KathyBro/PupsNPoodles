@@ -7,14 +7,17 @@
         $username = htmlspecialchars($username);
         $password = htmlspecialchars($password);
         $userId = FindUserId($dbConn, $username, $password);
+        $isBusiness = IsBusiness($dbConn, $userId);
         
         mysqli_close($dbConn);
         $_SESSION['userId'] = $userId;
+        $_SESSION['isBusiness'] = $isBusiness;
     }
 
     function Logout()
     {
         unset($_SESSION['userId']);
+        unset($_SESSION['isBusiness']);
     }
 
     function InsertAppointment($businessId, $ownerId, $petName, $petSpecies, $appointmentTime, $status)

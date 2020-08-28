@@ -23,6 +23,14 @@ function FindUserId($dbConn, $username, $password)
     return mysqli_fetch_array($table)['id']; 
 }
 
+function IsBusiness($dbConn, $id)
+{
+    $query = "SELECT isBusiness FROM UserTable WHERE id=" . $id . ";";
+    $table = mysqli_query($dbConn, $query);
+
+    return mysqli_fetch_array($table)['isBusiness'];
+}
+
 function FindUser($dbConn, $username, $password) {
     $query = "SELECT * FROM UserTable WHERE username='" . $username . "' AND password='" . $password . "';";
 

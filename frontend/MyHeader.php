@@ -23,9 +23,12 @@
         <?php
             if(isset($_SESSION['userId']))
             {
+                if($_SESSION['isBusiness'] == false)
+                {
+                    echo '<li><a href="appointment.php">Make an Appointment</a></li>';
+                    echo '<li><a href="profile.php">Profile</a></li>';
+                }
                 echo '<li><a href="login.php">Logout</a></li>';
-                echo '<li><a href="appointment.php">Make an Appointment</a></li>';
-                echo '<li><a href="profile.php">Profile</a></li>';
                 
             }
             else

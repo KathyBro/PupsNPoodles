@@ -3,6 +3,11 @@ $title = "Create an Appointment";
 include_once "MyHeader.php";
 include_once "..\backend\Helper.php";
 $businessArray = GetAllBusinesses();
+
+if(!isset($_SESSION['userId']) || $_SESSION['isBusiness'] == true)
+    {
+        header("Location: login.php");
+    }
 ?>
 <html id="appointment-body">
 <form method="post" action="appointment.php"> <label class="appt" for="date">Time (date and time):</label>
