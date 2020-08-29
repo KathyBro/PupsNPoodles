@@ -29,7 +29,7 @@
             //Checks for populated user session
             if(isset($_SESSION['userId']))
             {
-                if($_SESSION['isBusiness'] == false)
+                if($user['isBusiness'] == false)
                 {
                     echo '<li><a href="appointment.php">Make an Appointment</a></li>';
                     echo '<li><a href="profile.php">Profile</a></li>';
