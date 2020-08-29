@@ -1,7 +1,6 @@
 <?php
     $title = "Profile"; 
     include_once "MyHeader.php";
-    include_once "..\backend\Helper.php";
 
     if(!isset($_SESSION['userId']) || $user['isBusiness'] == true)
     {

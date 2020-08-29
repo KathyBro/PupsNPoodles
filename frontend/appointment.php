@@ -6,7 +6,7 @@ include_once "..\backend\Helper.php";
 //Stores SQL user table that match buisness criteria 
 $businessArray = GetAllBusinesses();
 
-if(!isset($_SESSION['userId']) || $_SESSION['isBusiness'] == true)
+if(!isset($_SESSION['userId']) || $user['isBusiness'] == true)
     {
         header("Location: login.php");
     }
@@ -68,6 +68,7 @@ if(!isset($_SESSION['userId']) || $_SESSION['isBusiness'] == true)
             
             //Sends data to backend   
             InsertAppointment($businessId, $ownerId, $petName, $petSpecies, $appointmentTime, $status);
+            header("Location: index.php");
         }
         
     }

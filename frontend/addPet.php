@@ -1,7 +1,6 @@
 <?php
     $title = "Add Pet"; 
     include_once "MyHeader.php";
-    include_once "..\backend\Helper.php";
 
     if(!isset($_SESSION['userId']) || $_SESSION['isBusiness'] == true)
     {
@@ -17,7 +16,7 @@ echo '<html id="addPet-body">';
         $species = $_POST['species'];
 
         UploadPet($petName, $species);
-
+        header("Location: profile.php");
         echo '<h2>Your pet has been saved!</h2>';
     }
 ?>
@@ -35,10 +34,6 @@ echo '<html id="addPet-body">';
     <br>
     <button class="appt" type='submit' name='Upload'>Save</button>
 </form>
-
-<?php 
-    echo '</html>';
-?>
 
 <?php
     include_once "MyFooter.php";
